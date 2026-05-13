@@ -111,13 +111,6 @@
   <div id="news-content"></div>
 </div>
 <script>
-// ============================================================
-//  PASTE YOUR ANTHROPIC API KEY BELOW
-//  Get one at: https://console.anthropic.com → API Keys
-// ============================================================
-const ANTHROPIC_API_KEY = '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';
-// ============================================================
-
 const WORKER_URL = 'https://nameless-sky-e235.andreww-lee1313.workers.dev';
 
 let simpleMode = false;
@@ -148,7 +141,7 @@ function toggleSimple() {
 async function callClaude(userPrompt) {
   const res = await fetch(WORKER_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 1000,
